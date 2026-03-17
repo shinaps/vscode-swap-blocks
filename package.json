@@ -1,0 +1,50 @@
+{
+  "name": "swap-blocks",
+  "displayName": "Swap Blocks",
+  "description": "Swap code blocks up/down like WebStorm's Move Statement",
+  "publisher": "shinaps",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "swapBlocks.moveUp",
+        "title": "Swap Block Up"
+      },
+      {
+        "command": "swapBlocks.moveDown",
+        "title": "Swap Block Down"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "swapBlocks.moveUp",
+        "key": "ctrl+shift+up",
+        "mac": "cmd+shift+up",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "command": "swapBlocks.moveDown",
+        "key": "ctrl+shift+down",
+        "mac": "cmd+shift+down",
+        "when": "editorTextFocus && !editorReadonly"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.5.0"
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  }
+}
